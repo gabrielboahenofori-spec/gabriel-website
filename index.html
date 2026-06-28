@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gabriel Ofori | KsTU Student Profile</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  
+  <style>
+
+
+    :root {
+  --cream:       #F5F0E8;
+  --white:       #FFFFFF;
+  --dark:        #1A1A1A;
+  --accent:      #E8734A;
+  --muted:       #666666;
+  --yellow-blob: #F9E04B;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(
+    -45deg,
+    #F5F0E8,
+    #f9c784,
+    #fceff9,
+    #a8d8ea
+  );
+  background-size: 400% 400%;
+  animation: gradientWave 10s ease infinite;
+  color: var(--dark);
+  line-height: 1.6;
+}  
+  
+
+
+
+@keyframes gradientWave {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+
+header {
+  background-color: var(--yellow-blob);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 60px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--dark);
+}
+
+nav {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--dark);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+nav a:last-child {
+  background-color: var(--accent);
+  color: var(--white);
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: 600;
+}
+
+nav a:last-child:hover {
+  background-color: #d4633b;
+}
+
+#home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  padding: 80px 60px;
+  min-height: 85vh;
+  background-color: transparent;
+}
+
+.hero-image {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.hero-image::before {
+  content: '';
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  background-color: var(--yellow-blob);
+  border-radius: 50%;
+  top: 10px;
+  left: -10px;
+  z-index: 0;
+}
+
+.hero-image img {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
+  border: 5px solid var(--white);
+}
+
+.hero-text {
+  max-width: 480px;
+}
+
+.hero-text h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  font-size: 1.15rem;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.hero-text p strong {
+  color: var(--dark);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+section {
+  padding: 80px 60px;
+}
+
+section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: var(--dark);
+}
+
+section p {
+  font-size: 1rem;
+  color: var(--muted);
+  margin-bottom: 12px;
+  line-height: 1.8;
+}
+
+#profile   { background-color: rgba(255, 255, 255, 0.75); }
+#academics { background-color: rgba(245, 240, 232, 0.65); }
+#skills    { background-color: rgba(255, 255, 255, 0.75); }
+#hobbies   { background-color: rgba(245, 240, 232, 0.65); }
+#contact   { background-color: rgba(255, 255, 255, 0.75); }
+
+#contact p {
+  border-left: 3px solid var(--accent);
+  padding-left: 16px;
+  margin-bottom: 16px;
+}
+
+footer {
+  background-color: var(--dark);
+  color: #aaaaaa;
+  text-align: center;
+  padding: 28px 60px;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+  }
+
+  .hero-buttons button {
+    background-color: var(--accent);
+    color: var(--white);
+    border: none;
+    padding: 12px 22px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .hero-buttons button:hover {
+    background-color: #d4633b;
+    transform: translateY(-2px);
+  }
+
+  .output-message {
+    margin-top: 16px;
+    font-size: 1rem;
+    color: var(--accent) !important;
+    font-weight: 600;
+    min-height: 24px;
+  }
+
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+  }
+
+  body.dark-mode header {
+    background-color: #2a2a2a;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.4);
+  }
+
+  body.dark-mode .logo {
+    color: #f0f0f0;
+  }
+
+  body.dark-mode nav a {
+    color: #f0f0f0;
+  }
+
+  body.dark-mode #profile,
+  body.dark-mode #skills,
+  body.dark-mode #contact {
+    background-color: #2a2a2a;
+  }
+
+  body.dark-mode #academics,
+  body.dark-mode #hobbies {
+    background-color: #222222;
+  }
+
+  body.dark-mode section h2 {
+    color: #f0f0f0;
+  }
+
+  @media (max-width: 768px) {
+    header {
+      padding: 14px 20px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    nav {
+      gap: 14px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    nav a {
+      font-size: 0.8rem;
+    }
+
+    #home {
+      flex-direction: column;
+      text-align: center;
+      padding: 60px 24px;
+      gap: 40px;
+      min-height: auto;
+    }
+
+    .hero-image::before {
+      width: 220px;
+      height: 220px;
+    }
+
+    .hero-image img {
+      width: 200px;
+      height: 200px;
+    }
+
+    .hero-text {
+      max-width: 100%;
+    }
+
+    .hero-text h1 {
+      font-size: 2.2rem;
+    }
+
+    .hero-buttons {
+      justify-content: center;
+    }
+
+    section {
+      padding: 50px 24px;
+    }
+
+    section h2 {
+      font-size: 1.6rem;
+    }
+  }
+
+  </style>
+</head>
+<body>
+
+  <!-- 1. HEADER / NAVBAR -->
+  <header>
+    <div class="logo">Gabriel Ofori</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#profile">Profile</a>
+      <a href="#academics">Academics</a>
+      <a href="#skills">Skills</a>
+      <a href="#hobbies">Hobbies</a>
+      <a href="#contact">Contact</a>
+      <a href="#contact">Login</a>
+    </nav>
+  </header>
+
+  <!-- 2. MAIN CONTENT AREA -->
+  <main>
+
+    <!-- 2a. HERO / ABOUT SECTION -->
+    <section id="home">
+      <div class="hero-image">
+        <!-- Student photo goes here -->
+        <img src="images/jinwoo.jpeg" alt="Student Photo" />
+      </div>
+      <div class="hero-text">
+        <h1>Hey Friends 👋</h1>
+        <p>I'm Gabriel Ofori a passionate Level 100 BTech Computer Technology student at Kumasi Technical University (KsTU),
+            enrolled in cohort BTCT 1B for the 2025/2026 academic year. I am dedicated to building a strong foundation in software development,
+            wed technnologies, and computer systems.
+        </p>
+        <div class="hero-buttons">
+          <button onclick="showWelcome()">Hello</button>
+          <button onclick="showDateTime()">Date and Time</button>
+          <button onclick="toggleDarkMode()">Dark Mode</button>
+        </div>
+
+        <p id="output-message" class="output-message"></p>
+
+      </div>
+    </section>
+
+    <!-- 2b. EDUCATION SECTION -->
+    <section id="education">
+      <h2>Educational Background</h2>
+      <p>JHS: St.Mary's Catholic Junior High School</p>
+      <p>SHS: Konongo Odumase Senior High School</p>
+      <p>UNIVERSITY: Kumasi Technical University</p>
+    </section>
+
+    <!-- ACADEMICS -->
+      <section id="academics">
+        <h2>Academics</h2>
+        <p>📘 Programme: BTech Computer Technology</p>
+        <p>📅 Level: 100 | Semester 2 | 2025/2026</p>
+        <p>🏛️ Department: Computer Technology — BTCT 1B</p>
+        <p>📘 BTCT 106 — Java Programming</p>
+        <p>📘 BTCT 114 — Front End Web Development</p>
+        <p>📘 BTCT 108 — Probability and Statistics</p>
+        <p>📘 BTCT 110 — Open-Source Operating Systems</p>
+        <p>📘 BTCT 112 — Computer Hardware and Maintenance</p>
+        <p>📘 BTCT 102 — Problem Solving and Critical Thinking</p>
+      </section>
+
+    <!-- 2c. SKILLS SECTION -->
+    <section id="skills">
+      <h2>My Skills</h2>
+       <p>🌐 Web Development: HTML5, CSS3, JavaScript</p>
+       <p>🧑‍💻 Programming: Python, Java</p>
+       <p>💼 Business: Data Bundle Reselling, Mobile Money, Sales</p>
+       <p>🖥️ Operating Systems: Linux (Ubuntu), Windows</p>
+       <p>🤝 Soft Skills: Communication, Teamwork, Critical Thinking</p>
+       <p>📜 Certification: Hashgraph Developer Course</p>
+
+    </section>
+
+    <!-- 2d. HOBBIES SECTION -->
+    <section id="hobbies">
+      <h2>Hobbies</h2>
+       <p>⚽ Football — FC Barcelona supporter</p>
+       <p>🎮 Gaming — eFootball Mobile, FC 24</p>
+       <p>💡 Programming — building web projects</p>
+       <p>📈 Investing — US stocks via Bamboo & Blackstar</p>
+       <p>🌿 Fragrances and Skincare</p>
+
+    </section>
+
+    <!-- 2e. CONTACT SECTION -->
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <p>Email: gabrielboahenofori@email.com</p>
+      <p>Phone: +233 55 347 1182</p>
+      <p>GitHub: github.com/lilricch</p>
+      <p>Location: Kumasi,Ghana</p>
+    </section>
+
+  </main>
+
+  <!-- 3. FOOTER -->
+  <footer>
+    <p>&copy; 2026 Gabriel Ofori | Kumasi Technical University</p>
+  </footer>
+
+   <script>
+function showWelcome() {
+  var message = document.getElementById('output-message');
+  message.textContent ='🎉 Welcome! I am Gabriel Ofori from KsTU — glad you stopped by!';
+}
+
+function showDateTime() {
+  var now = new Date();
+  var message = document.getElementById('output-message');
+  message.textContent = '🕐 ' + now.toDateString() + ' — ' + now.toLocaleTimeString();
+}
+
+function toggleDarkMode() {
+  var body = document.body;
+  body.classList.toggle('dark-mode');
+
+  var button = document.querySelector('.hero-buttons button:last-child');
+  if (body.classList.contains('dark-mode')) {
+    button.textContent = '☀️ Light Mode';
+  } else {
+    button.textContent = '🌙 Dark Mode';
+  }
+}
+
+  </script>
+
+</body>
+</html>

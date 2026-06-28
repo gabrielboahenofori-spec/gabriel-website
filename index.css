@@ -1,0 +1,299 @@
+
+:root {
+  --cream:       #F5F0E8;
+  --white:       #FFFFFF;
+  --dark:        #1A1A1A;
+  --accent:      #E8734A;
+  --muted:       #666666;
+  --yellow-blob: #F9E04B;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--cream);
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+header {
+  background-color: var(--white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 60px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--dark);
+}
+
+nav {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--dark);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+nav a:last-child {
+  background-color: var(--accent);
+  color: var(--white);
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: 600;
+}
+
+nav a:last-child:hover {
+  background-color: #d4633b;
+}
+
+#home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  padding: 80px 60px;
+  min-height: 85vh;
+}
+
+.hero-image {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.hero-image::before {
+  content: '';
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  background-color: var(--yellow-blob);
+  border-radius: 50%;
+  top: 10px;
+  left: -10px;
+  z-index: 0;
+}
+
+.hero-image img {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
+  border: 5px solid var(--white);
+}
+
+.hero-text {
+  max-width: 480px;
+}
+
+.hero-text h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  font-size: 1.15rem;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.hero-text p strong {
+  color: var(--dark);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+section {
+  padding: 80px 60px;
+}
+
+section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: var(--dark);
+}
+
+section p {
+  font-size: 1rem;
+  color: var(--muted);
+  margin-bottom: 12px;
+  line-height: 1.8;
+}
+
+#profile   { background-color: var(--white); }
+#academics { background-color: var(--cream); }
+#skills    { background-color: var(--white); }
+#hobbies   { background-color: var(--cream); }
+#contact   { background-color: var(--white); }
+
+#contact p {
+  border-left: 3px solid var(--accent);
+  padding-left: 16px;
+  margin-bottom: 16px;
+}
+
+footer {
+  background-color: var(--dark);
+  color: #aaaaaa;
+  text-align: center;
+  padding: 28px 60px;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+  }
+
+  .hero-buttons button {
+    background-color: var(--accent);
+    color: var(--white);
+    border: none;
+    padding: 12px 22px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .hero-buttons button:hover {
+    background-color: #d4633b;
+    transform: translateY(-2px);
+  }
+
+  .output-message {
+    margin-top: 16px;
+    font-size: 1rem;
+    color: var(--accent) !important;
+    font-weight: 600;
+    min-height: 24px;
+  }
+
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+  }
+
+  body.dark-mode header {
+    background-color: #2a2a2a;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.4);
+  }
+
+  body.dark-mode .logo {
+    color: #f0f0f0;
+  }
+
+  body.dark-mode nav a {
+    color: #f0f0f0;
+  }
+
+  body.dark-mode #profile,
+  body.dark-mode #skills,
+  body.dark-mode #contact {
+    background-color: #2a2a2a;
+  }
+
+  body.dark-mode #academics,
+  body.dark-mode #hobbies {
+    background-color: #222222;
+  }
+
+  body.dark-mode section h2 {
+    color: #f0f0f0;
+  }
+
+  @media (max-width: 768px) {
+    header {
+      padding: 14px 20px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    nav {
+      gap: 14px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    nav a {
+      font-size: 0.8rem;
+    }
+
+    #home {
+      flex-direction: column;
+      text-align: center;
+      padding: 60px 24px;
+      gap: 40px;
+      min-height: auto;
+    }
+
+    .hero-image::before {
+      width: 220px;
+      height: 220px;
+    }
+
+    .hero-image img {
+      width: 200px;
+      height: 200px;
+    }
+
+    .hero-text {
+      max-width: 100%;
+    }
+
+    .hero-text h1 {
+      font-size: 2.2rem;
+    }
+
+    .hero-buttons {
+      justify-content: center;
+    }
+
+    section {
+      padding: 50px 24px;
+    }
+
+    section h2 {
+      font-size: 1.6rem;
+    }
+
+
+  }
